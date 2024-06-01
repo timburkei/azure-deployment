@@ -12,19 +12,19 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "HdMExample2024Res" {
   name     = "example-resources"
   location = "West Europe"
 }
 
-resource "azurerm_container_group" "example" {
+resource "azurerm_container_group" "HdMExample2024Res" {
   name                = "example-containergroup"
-  location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.HdMExample2024Res.location
+  resource_group_name = azurerm_resource_group.HdMExample2024Res.name
   os_type             = "Linux"
 
   container {
-    name   = "example-container"
+    name   = "example-container-hdm-2024-mongo"
     image  = "mongo:latest"
     cpu    = "0.5"
     memory = "1.5"
